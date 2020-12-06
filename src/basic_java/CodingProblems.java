@@ -15,7 +15,26 @@ public class CodingProblems {
      * @param limit -limit of weight per boat
      */
     public static int problem291(int[] arr, int limit) {
-        return -1;
+
+        int sum = 0;
+        /*
+         * לולאה שתרוץ על המערך בדיקה של 2 מספרים במערך לא יעבור limit אלון: לולאה שתרוץ
+         * על המערך שתבדוק מיקום אינדקס, עם לולאה נוספת, לבדוק קטן שווה 200 להוסיף למונה
+         * 1 כדי לספור סירות
+         * 
+         */
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != -1)
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[j] != -1 && arr[i] + arr[j] <= limit) {
+                        sum++;
+                        arr[j] = -1;
+                        // arr[i] = -1;
+                    }
+                }
+        }
+        return sum;
     }
 
     /**
@@ -36,10 +55,6 @@ public class CodingProblems {
      */
     public static int problem288(int x) {
         return -1;
-    }
-
-    public static void main(String[] args) {
-        assert (problem288(1234) == 3);
     }
 
 }
