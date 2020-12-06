@@ -1,10 +1,9 @@
+package pets;
 
 public class Fish extends Animal {
 
-	
-	
-	public Fish(String name,String breed,String color){
-		super(0,name,breed,color);
+	public Fish(String name, String breed, String color) {
+		super(0, name, breed, color);
 	}
 
 	@Override
